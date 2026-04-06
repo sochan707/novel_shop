@@ -4,50 +4,68 @@ const Footer = () => {
   const helpLinks = ["Payment Options", "Returns", "Privacy Policies"]
 
   return (
-    <footer style={styles.footer}>
+    <>
+      <style>{`
+        .Link {
+          text-decoration: none;
+          color: #333;
+          transition: color 0.2s ease;
+          display: block;
+          margin-bottom: 14px;
+          font-size: 14px;
+          font-weight: 500;
+        }
+        .Link:hover {
+          color: #F2A65A;
+         
+        }
+      `}</style>
 
-      {/* Top Section */}
-      <div style={styles.topSection}>
+      <footer style={styles.footer}>
 
-        {/* Brand */}
-        <div style={styles.brandCol}>
-          <p style={styles.brandName}>NovelShop.</p>
-          <p style={styles.address}>
-            our one-stop destination for books, <br />
-  stories, and endless adventures.
+        {/* Top Section */}
+        <div style={styles.topSection}>
+
+          {/* Brand */}
+          <div style={styles.brandCol}>
+            <p style={styles.brandName}>NovelShop.</p>
+            <p style={styles.address}>
+              our one-stop destination for books, <br />
+              stories, and endless adventures.
+            </p>
+          </div>
+
+          {/* Links */}
+          <div style={styles.col}>
+            <p style={styles.colTitle}>Links</p>
+            {links.map((link) => (
+              <a key={link} href="#" className="Link">
+                {link}
+              </a>
+            ))}
+          </div>
+
+          {/* Help */}
+          <div style={styles.col}>
+            <p style={styles.colTitle}>Help</p>
+            {helpLinks.map((link) => (
+              <a key={link} href="#" className="Link">
+                {link}
+              </a>
+            ))}
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div style={styles.bottomBar}>
+          <p style={styles.copyright}>
+            2026 NovelShop. All rights reserved
           </p>
         </div>
 
-        {/* Links */}
-        <div style={styles.col}>
-          <p style={styles.colTitle}>Links</p>
-          {links.map((link) => (
-            <p key={link} style={styles.colItem}>{link}</p>
-          ))}
-        </div>
-
-        {/* Help */}
-        <div style={styles.col}>
-          <p style={styles.colTitle}>Help</p>
-          {helpLinks.map((link) => (
-            <p key={link} style={styles.colItem}>{link}</p>
-          ))}
-        </div>
-
-        {/* Newsletter */}
-        <div style={styles.newsletterCol}>
-          <div style={styles.inputRow}>
-          </div>
-        </div>
-
-      </div>
-
-      {/* Bottom Bar */}
-      <div style={styles.bottomBar}>
-        <p style={styles.copyright}>2026 NovelShop. All rights reserved</p>
-      </div>
-
-    </footer>
+      </footer>
+    </>
   )
 }
 
@@ -59,7 +77,7 @@ const styles = {
   },
   topSection: {
     display: "flex",
-    gap: "40px",
+    gap: "60px",
     flexWrap: "wrap",
     marginBottom: "40px",
   },
@@ -87,19 +105,13 @@ const styles = {
     color: "#9f9f9f",
     marginBottom: "20px",
   },
-  colItem: {
-    fontSize: "14px",
-    fontWeight: 500,
-    color: "#2d2d2d",
-    marginBottom: "14px",
-    cursor: "pointer",
-  },
   newsletterCol: {
     flex: 1.5,
     minWidth: "200px",
   },
   inputRow: {
     display: "flex",
+    gap: "10px",
   },
   input: {
     flex: 1,
