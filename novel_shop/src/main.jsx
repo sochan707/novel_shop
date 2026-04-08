@@ -7,13 +7,15 @@ import NotFoundPage from './NotFoundPage.jsx'
 import Shop from './Shop.jsx'
 import BlogPage from './blog.jsx'
 import ContactPage from './Contact.jsx'
+import Homepage from './Homepage.jsx'
 
 const router = createBrowserRouter([
-  { path: "/",        element: <App /> },
-  { path: "/shop",    element: <Shop /> },
-  { path: "/blog",    element: <BlogPage /> },
-  { path: "/contact", element: <ContactPage /> },
-  { path: "*",        element: <NotFoundPage /> },
+  { path: "/", element: <App/> },
+  { path: "/home", element: <Homepage/> },
+  { path: "/shop", element: <Shop/> },
+  { path: "/blog", element: <BlogPage/> },
+  { path: "/contact", element: <ContactPage/> },
+  { path: "*", element: <NotFoundPage/> },
 ]);
 
 createRoot(document.getElementById('root')).render(
