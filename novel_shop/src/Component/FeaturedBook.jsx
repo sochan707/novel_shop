@@ -1,9 +1,11 @@
 import React from "react";
 import { ALL_NOVELS } from "../data/productData"; 
+import { useNavigate } from "react-router-dom";
 
 const FeaturedBooks = () => {
 
   const books = ALL_NOVELS.slice(0, 8);
+  const navigate = useNavigate();
 
   return (
     <section className="py-20 bg-gray-50">
@@ -11,9 +13,9 @@ const FeaturedBooks = () => {
 
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-4xl font-bold">Featured Books</h2>
-          <a href="#" className="text-amber-800 hover:underline font-medium">
+          <button onClick={() => navigate(`/shop`)} className="text-amber-800 hover:underline font-medium">
             View All Books →
-          </a>
+          </button>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

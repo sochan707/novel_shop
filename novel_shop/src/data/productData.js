@@ -4,11 +4,7 @@ import book3 from "../assets/book3.jpg"
 import book4 from "../assets/book4.jpg"
 import book5 from "../assets/book5.jpg"
 import book6 from "../assets/book6.jpg"
-<<<<<<< HEAD
-import book7 from "../assets/book7.jpg"
-=======
 import book7 from "../assets/book7.webp"
->>>>>>> 8490941 (clean up code)
 import book8 from "../assets/book8.jpg"
 import book9 from "../assets/book9.jpg"
 import book10 from "../assets/book10.jpg"
