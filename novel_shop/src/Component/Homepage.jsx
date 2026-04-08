@@ -2,11 +2,13 @@
 
 import React from 'react';
 import './Homepage.css';
+import Header from './Header';
 
 
 const Homepage = () => {
   return (
     <>
+    <Header/>
       {/* ==================== HERO SECTION ==================== */}
       <section className="hero">
         <div className="container">
