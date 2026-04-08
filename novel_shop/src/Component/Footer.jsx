@@ -23,7 +23,7 @@ export default function Footer() {
           {links.map((link) => (
             <a
               key={link}
-              href="#"
+              href={`/${link.toLowerCase()}`}
               className="block mb-3 text-[14px] font-medium text-[#333] hover:text-[#F2A65A] transition-colors"
             >
               {link}
