@@ -4,7 +4,7 @@ const Header = ({ cartCount = 0 }) => {
       <style>{`
         .navLink {
           text-decoration: none;
-          color: #333;
+          color: #FFFFF0 ;
           transition: color 0.2s ease;
         }
         .navLink:hover {
@@ -15,7 +15,7 @@ const Header = ({ cartCount = 0 }) => {
           background: none;
           border: none;
           cursor: pointer;
-          color: #333;
+          color: #FFFFF0;
           transition: color 0.2s ease;
         }
         .iconBtn:hover {
@@ -64,8 +64,8 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "20px 20px",
-    backgroundColor: "#BFC6C4",
-    borderBottom: "1px solid #BFC6C4",
+    backgroundColor: "#6F8F72",
+    borderBottom: "1px solid #6F8F72",
   },
   logo: {
     textDecoration: "none",
@@ -73,7 +73,7 @@ const styles = {
   logoText: {
     fontSize: "20px",
     fontWeight: "bold",
-    color: "#333",
+    color: "#FFFFF0",
   },
   nav: {
     display: "flex",

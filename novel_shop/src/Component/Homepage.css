@@ -1,0 +1,356 @@
+/* src/components/Homepage.css */
+
+/* ====================== General ====================== */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ====================== Hero Section ====================== */
+.hero {
+  background-color: #F9F6F0;
+  padding: 80px 0;
+}
+
+.hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.badge {
+  display: inline-block;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #F2A65A;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #111827;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: #4b5563;
+  max-width: 420px;
+}
+
+.btn-primary {
+  background-color: #ec6511;
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #F2A65A;
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  background-image: url('https://picsum.photos/id/1015/800/600');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.25), transparent);
+}
+
+/* ====================== Browse Section ====================== */
+.browse-section {
+  padding: 80px 0;
+}
+
+.section-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+}
+
+.browse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.browse-card {
+  text-align: center;
+  cursor: pointer;
+}
+
+.browse-image {
+  height: 380px;
+  border-radius: 24px;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.browse-card:hover .browse-image {
+  transform: scale(1.05);
+}
+
+.fiction { background-image: url('https://picsum.photos/id/201/600/450'); }
+.mystery { background-image: url('https://picsum.photos/id/870/600/450'); }
+.romance { background-image: url('https://picsum.photos/id/1011/600/450'); }
+
+.browse-card h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+/* ====================== Products Section ====================== */
+.products-section {
+  padding: 80px 0;
+  background-color: #f9fafb;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.view-all {
+  color: #92400e;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.book-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05);
+  transition: all 0.3s ease;
+}
+
+.book-card:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  transform: translateY(-8px);
+}
+
+.book-image {
+  position: relative;
+  height: 320px;
+}
+
+.book-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-small {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+.book-info {
+  padding: 24px;
+}
+
+.book-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.book-author {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.book-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-price {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.btn-add-to-cart {
+  background: #92400e;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+  background: #78350f;
+}
+
+/* ====================== Inspiration Section ====================== */
+.inspiration-section {
+  padding: 80px 0;
+}
+
+.inspiration-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.inspiration-label {
+  color: #92400e;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size: 1rem;
+}
+
+.inspiration-title {
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 16px 0 24px;
+}
+
+.inspiration-desc {
+  font-size: 1.15rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.inspiration-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.inspiration-image {
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+}
+
+.large {
+  height: 420px;
+  background-image: url('https://picsum.photos/id/1015/600/600');
+}
+
+.small {
+  height: 320px;
+  background-image: url('https://picsum.photos/id/133/600/600');
+  margin-top: 60px;
+}
+
+/* ====================== Gallery Section ====================== */
+.gallery-section {
+  padding: 80px 0;
+  background-color: #f9fafb;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.gallery-subtitle {
+  color: #6b7280;
+  font-size: 1.2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.gallery-item {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero .container,
+  .inspiration-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .inspiration-image.small {
+    margin-top: 20px;
+  }
+}
