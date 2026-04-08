@@ -8,11 +8,13 @@ import Shop from './Shop.jsx'
 import BlogPage from './blog.jsx'
 import ContactPage from './Contact.jsx'
 import Homepage from './Homepage.jsx'
+import SingleProduct from './SingleProduct.jsx'
 
 const router = createBrowserRouter([
   { path: "/", element: <App/> },
   { path: "/home", element: <Homepage/> },
   { path: "/shop", element: <Shop/> },
+  { path: "/product/:id", element: <SingleProduct /> },
   { path: "/blog", element: <BlogPage/> },
   { path: "/contact", element: <ContactPage/> },
   { path: "/blog", element: <BlogPage/> },

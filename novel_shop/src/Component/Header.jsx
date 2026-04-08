@@ -1,5 +1,5 @@
 export default function Header({ cartCount = 0 }) {
-  const links = ["Home", "Shop", "About", "Contact", "Blog"];
+  const links = ["Home", "Shop", "Contact", "Blog"];
 
   return (
     <header className="flex items-center justify-between px-5 py-5 bg-[#6F8F72] border-b border-[#6F8F72]">
