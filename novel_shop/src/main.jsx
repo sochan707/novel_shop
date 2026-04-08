@@ -5,7 +5,7 @@ import App from './App.jsx'
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import NotFoundPage from './NotFoundPage.jsx'
 import Shop from './Shop.jsx'
-import Homepage from './Component/Homepage.jsx'
+import Homepage from './Homepage.jsx'
 
 const router = createBrowserRouter([
   {path: "/", element: <App/>},
