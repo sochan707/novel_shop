@@ -1,3 +1,5 @@
+import Header from "./Component/Header";
+
 export default function FurniroShopPage() {
   const products = [
     {
@@ -51,7 +53,7 @@ export default function FurniroShopPage() {
 
   return (
     <div className="min-h-screen bg-[#FCF8F3] text-[#3A3A3A]">
-      <header className="border-b border-[#E8E2D8] bg-white">
+      {/* <header className="border-b border-[#E8E2D8] bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
           <div className="flex items-center gap-2">
             <div className="text-2xl font-black text-[#B88E2F]">△</div>
@@ -72,8 +74,8 @@ export default function FurniroShopPage() {
             <span>🛒</span>
           </div>
         </div>
-      </header>
-
+      </header> */}
+    <Header/>
       <section
         className="relative overflow-hidden"
         style={{
