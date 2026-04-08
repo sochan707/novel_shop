@@ -1,17 +1,17 @@
-import book1 from "../assets/Book1"
-import book2 from "../assets/book2"
-import book3 from "../assets/book3"
-import book4 from "../assets/book4"
-import book5 from "../assets/book5"
-import book6 from "../assets/book6"
-import book7 from "../assets/book7"
-import book8 from "../assets/book8"
-import book9 from "../assets/book9"
-import book10 from "../assets/book10"
-import book11 from "../assets/book11"
-import book12 from "../assets/book12"
-import book13 from "../assets/book13"
-import book14 from "../assets/book14"
+import book1 from "../assets/Book1.jpg"
+import book2 from "../assets/book2.jpg"
+import book3 from "../assets/book3.jpg"
+import book4 from "../assets/book4.jpg"
+import book5 from "../assets/book5.jpg"
+import book6 from "../assets/book6.jpg"
+import book7 from "../assets/book7.jpg"
+import book8 from "../assets/book8.jpg"
+import book9 from "../assets/book9.jpg"
+import book10 from "../assets/book10.jpg"
+import book11 from "../assets/book11.jpg"
+import book12 from "../assets/book12.jpg"
+import book13 from "../assets/book13.jpg"
+import book14 from "../assets/book14.jpg"
 
 export const ALL_NOVELS = [
     {
@@ -20,6 +20,7 @@ export const ALL_NOVELS = [
       subtitle: "by Taylor Jenkins Reid (Author)",
       price: "$6.97",
       oldPrice: "$17.00",
+      specialbadge: "Bestseller",
       badge: "-59%",
       description: "NEW YORK TIMES BESTSELLER From the New York Times bestselling author of Atmosphere and Daisy Jones & the Six—an entrancing and “wildly addictive journey of a reclusive Hollywood starlet” (PopSugar) as she reflects on her relentless rise to the top and the risks she took, the loves she lost, and the long-held secrets the public could never imagine. “Fascinating, emotional and will be hard to put down. For fans of Taylor Jenkins Reid, this is her best work yet.” —Associated Press",
       src: book1
@@ -40,6 +41,7 @@ export const ALL_NOVELS = [
       subtitle: "by Eliza Knight (Author)",
       price: "$1.99",
       oldPrice: "$17.99",
+      specialbadge: "New Arrival",
       badge: "-89%",
       description: "There are no female publishing CEOs in 1960's New York. And that is exactly what savvy, ambitious Bernadette Swift plans to change. Bernadette Swift, a young copyeditor at Lenox & Park Publishing, is determined to become the first female CEO in the publishing industry. But first she needs to take the next step up that ladder with a promotion that her boorish and sexist boss wants to thwart. Seeking a base of support, Bernadette joins a feminist women's book club at the New York Public Library, and soon, she's inspiring her fellow members to challenge the male gatekeepers and decades of ingrained sexism in their workplaces and pursue their personal and professional dreams.",
       src: book3
@@ -81,6 +83,7 @@ export const ALL_NOVELS = [
       price: "$17.99",
       oldPrice: "",
       badge: "",
+      specialbadge: "New Arrival",
       description: "A brand new hockey romance from New York Times Bestselling Author Claire Contreras set in the same world as Until I Get You... Finneas Alexander Barlow is a walking thirst trap. Tall, hot, and broody. Tousled brown hair, chiseled jaw, alluring green eyes, perfect teeth, well-groomed beard, broad shoulders, and lips good enough to bite. He’d look like a Disney prince if the prince was a broody ahole.",
       src: book7
     },

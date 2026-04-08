@@ -17,6 +17,7 @@ const router = createBrowserRouter([
   { path: "/contact", element: <ContactPage/> },
   { path: "/blog", element: <BlogPage/> },
   { path: "*", element: <NotFoundPage/> },
+  
 ]);
 
 createRoot(document.getElementById('root')).render(
