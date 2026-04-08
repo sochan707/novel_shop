@@ -1,98 +1,66 @@
-const Header = ({ cartCount = 0 }) => {
+export default function Header({ cartCount = 0 }) {
+  const links = ["Home", "Shop", "About", "Contact", "Blog"];
+
   return (
-    <>
-      <style>{`
-        .navLink {
-          text-decoration: none;
-          color: #FFFFF0 ;
-          transition: color 0.2s ease;
-        }
-        .navLink:hover {
-          color: #F2A65A;
-          border-bottom: 1px solid #F2A65A;
-        }
-        .iconBtn {
-          background: none;
-          border: none;
-          cursor: pointer;
-          color: #FFFFF0;
-          transition: color 0.2s ease;
-        }
-        .iconBtn:hover {
-          color: #F2A65A;
-        }
-      `}</style>
+    <header className="flex items-center justify-between px-5 py-5 bg-[#6F8F72] border-b border-[#6F8F72]">
+      {/* Logo */}
+      <a href="/" className="no-underline">
+        <span className="text-[20px] font-bold text-[#FFFFF0]">
+          NovelShop
+        </span>
+      </a>
 
-      <header style={styles.header}>
-        <a href="/" style={styles.logo}>
-          <span style={styles.logoText}>NovelShop</span>
-        </a>
+      {/* Nav */}
+      <nav className="flex gap-5">
+        {links.map((link) => (
+          <a
+            key={link}
+            href={`/${link.toLowerCase()}`}
+            className="text-[#FFFFF0] no-underline transition-colors duration-200 hover:text-[#F2A65A] hover:border-b hover:border-[#F2A65A]"
+          >
+            {link}
+          </a>
+        ))}
+      </nav>
 
-        <nav style={styles.nav}>
-          {["Home", "Shop", "About", "Contact", "Blog"].map((link) => (
-            <a key={link} href={`/${link.toLowerCase()}`} className="navLink">
-              {link}
-            </a>
-          ))}
-        </nav>
+      {/* Icons */}
+      <div className="flex gap-3">
+        <button
+          aria-label="Account"
+          className="bg-none border-none cursor-pointer text-[#FFFFF0] transition-colors duration-200 hover:text-[#F2A65A]"
+        >
+          <span className="material-icons">person_outline</span>
+        </button>
 
-        <div style={styles.icons}>
-          <button className="iconBtn" aria-label="Account">
-            <span className="material-icons">person_outline</span>
+        <button
+          aria-label="Search"
+          className="bg-none border-none cursor-pointer text-[#FFFFF0] transition-colors duration-200 hover:text-[#F2A65A]"
+        >
+          <span className="material-icons">search</span>
+        </button>
+
+        <button
+          aria-label="Wishlist"
+          className="bg-none border-none cursor-pointer text-[#FFFFF0] transition-colors duration-200 hover:text-[#F2A65A]"
+        >
+          <span className="material-icons">favorite_border</span>
+        </button>
+
+        <div className="relative">
+          <button
+            aria-label="Cart"
+            className="bg-none border-none cursor-pointer text-[#FFFFF0] transition-colors duration-200 hover:text-[#F2A65A]"
+          >
+            <span className="material-icons">shopping_bag</span>
           </button>
-          <button className="iconBtn" aria-label="Search">
-            <span className="material-icons">search</span>
-          </button>
-          <button className="iconBtn" aria-label="Wishlist">
-            <span className="material-icons">favorite_border</span>
-          </button>
-          <div style={{ position: "relative" }}>
-            <button className="iconBtn" aria-label="Cart">
-              <span className="material-icons">shopping_bag</span>
-            </button>
-            {cartCount > 0 && <span style={styles.badge}>{cartCount}</span>}
-          </div>
+
+          {cartCount > 0 && (
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[12px] px-1.5 py-[2px] rounded-full">
+              {cartCount}
+            </span>
+          )}
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
-};
-
-const styles = {
-  header: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "20px 20px",
-    backgroundColor: "#6F8F72",
-    borderBottom: "1px solid #6F8F72",
-  },
-  logo: {
-    textDecoration: "none",
-  },
-  logoText: {
-    fontSize: "20px",
-    fontWeight: "bold",
-    color: "#FFFFF0",
-  },
-  nav: {
-    display: "flex",
-    gap: "20px",
-  },
-  icons: {
-    display: "flex",
-    gap: "10px",
-  },
-  badge: {
-    position: "absolute",
-    top: "-5px",
-    right: "-5px",
-    backgroundColor: "red",
-    color: "white",
-    borderRadius: "50%",
-    padding: "2px 6px",
-    fontSize: "12px",
-  },
-};
-
-export default Header;
+}
