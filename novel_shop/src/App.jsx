@@ -6,8 +6,9 @@ import Homepage from "./Homepage"
 function App() {
   return (
     <>
+    {/* <Header/> */}
     <Homepage/>
-    <Footer/>
+    {/* <Footer/> */}
       
 
     </>
