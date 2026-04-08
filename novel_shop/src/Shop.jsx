@@ -1,3 +1,4 @@
+import Footer from "./Component/Footer";
 import Header from "./Component/Header";
 
 export default function FurniroShopPage() {
@@ -189,6 +190,8 @@ export default function FurniroShopPage() {
           </button>
         </div>
       </main>
+
+      <Footer/>
     </div>
   );
 }
