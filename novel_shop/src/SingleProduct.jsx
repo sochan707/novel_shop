@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
@@ -7,6 +8,9 @@ export default function SingleProduct() {
   const { id } = useParams();
 
   const product = ALL_NOVELS.find((item) => item.id === Number(id));
+
+  const [format, setFormat] = useState("original");
+  const [quantity, setQuantity] = useState(0);
 
   if (!product) {
     return (
@@ -36,7 +40,9 @@ export default function SingleProduct() {
     product.src,
   ];
 
-  const galleryImages = [product.src, product.src];
+  const basePrice = Number(String(product.price).replace("$", "").trim());
+  const finalPrice = format === "print" ? basePrice * 0.9 : basePrice;
+  const totalPrice = finalPrice * quantity;
 
   return (
     <div className="min-h-screen bg-white text-[#1f1f1f]">
@@ -95,8 +101,18 @@ export default function SingleProduct() {
             <p className="mt-3 text-lg text-[#9f9f9f]">{product.subtitle}</p>
 
             <p className="mt-3 text-2xl font-medium text-[#9f9f9f]">
-              {product.price}
+              ${finalPrice.toFixed(2)}
             </p>
+
+            <p className="mt-1 text-sm text-[#9f9f9f]">
+              Total: ${totalPrice.toFixed(2)}
+            </p>
+
+            {format === "print" && (
+              <p className="mt-1 text-sm text-green-600">
+                Print version discount applied (-10%)
+              </p>
+            )}
 
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <div className="flex text-[#ffc700]">
@@ -112,33 +128,57 @@ export default function SingleProduct() {
               {product.description}
             </p>
 
-            {/* Fake size section to preserve old UI */}
+            {/* Format Section */}
             <div className="mt-8">
               <p className="text-sm text-[#9f9f9f]">Format</p>
               <div className="mt-3 flex gap-4">
-                <button className="rounded-lg bg-[#b88e2f] px-4 py-2 text-sm text-white">
-                  Print
+                <button
+                  onClick={() => setFormat("print")}
+                  className={`rounded-lg px-4 py-2 text-sm transition ${
+                    format === "print"
+                      ? "bg-[#b88e2f] text-white"
+                      : "bg-[#f9f1e7] text-[#1f1f1f]"
+                  }`}
+                >
+                  Print (-10%)
                 </button>
-                <button className="rounded-lg bg-[#f9f1e7] px-4 py-2 text-sm text-[#1f1f1f]">
-                  Deluxe
-                </button>
-                <button className="rounded-lg bg-[#f9f1e7] px-4 py-2 text-sm text-[#1f1f1f]">
-                  Limited
+
+                <button
+                  onClick={() => setFormat("original")}
+                  className={`rounded-lg px-4 py-2 text-sm transition ${
+                    format === "original"
+                      ? "bg-[#b88e2f] text-white"
+                      : "bg-[#f9f1e7] text-[#1f1f1f]"
+                  }`}
+                >
+                  Original
                 </button>
               </div>
             </div>
 
+            {/* Quantity + Add to Cart */}
             <div className="mt-8 flex flex-wrap gap-4">
               <div className="flex items-center gap-6 rounded-xl border border-[#9f9f9f] px-4 py-3">
-                <button className="text-lg">-</button>
-                <span>1</span>
-                <button className="text-lg">+</button>
+                <button
+                  onClick={() => setQuantity((prev) => Math.max(0, prev - 1))}
+                  className="text-lg"
+                >
+                  -
+                </button>
+
+                <span>{quantity}</span>
+
+                <button
+                  onClick={() => setQuantity((prev) => prev + 1)}
+                  className="text-lg"
+                >
+                  +
+                </button>
               </div>
 
               <button className="rounded-xl border border-black px-8 py-3 text-base font-medium transition hover:bg-black hover:text-white">
                 Add To Cart
               </button>
-
             </div>
 
             <div className="mt-10 border-t border-[#d9d9d9] pt-10 text-sm text-[#9f9f9f]">
@@ -154,7 +194,6 @@ export default function SingleProduct() {
                 <span>Tags</span>
                 <span>:</span>
                 <span>Novel, Book, Reading, Shop</span>
-
               </div>
             </div>
           </div>

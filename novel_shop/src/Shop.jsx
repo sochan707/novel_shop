@@ -1,24 +1,31 @@
+import { useState } from "react";
 import Footer from "./Component/Footer";
 import Header from "./Component/Header";
-import {ALL_NOVELS} from "./data/productData"
-import libraryImage from "./assets/library_bg.jpg"
+import { ALL_NOVELS } from "./data/productData";
+import libraryImage from "./assets/library_bg.jpg";
 import ProductCard from "./Component/ProductCard";
 
-export default function FurniroShopPage() {
+export default function ShopPage() {
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const allProducts = Array.from({ length: 16 }, (_, index) => {
-    const item = ALL_NOVELS[index % ALL_NOVELS.length];
-    return { ...item, id: index + 1, highlight: index === 1 };
-  });
+  const itemsPerPage = 8;
+  const totalProducts = ALL_NOVELS.length;
+  const totalPages = Math.ceil(totalProducts / itemsPerPage);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentProducts = ALL_NOVELS.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   return (
     <div className="min-h-screen bg-[#FCF8F3] text-[#3A3A3A]">
-      <Header/>
+      <Header />
+
       <section
         className="relative overflow-hidden"
         style={{
-          backgroundImage:
-            `linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url(${libraryImage})`,
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url(${libraryImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -43,18 +50,22 @@ export default function FurniroShopPage() {
             <span>⬛️⬛️</span>
             <span>☷</span>
             <div className="h-8 w-px bg-[#9F9F9F]" />
-            <span>Showing 1–16 of 32 results</span>
+            <span>
+              Showing {startIndex + 1}–
+              {Math.min(startIndex + itemsPerPage, totalProducts)} of{" "}
+              {totalProducts} results
+            </span>
           </div>
 
           <div className="flex flex-wrap items-center gap-4 text-sm">
             <div className="flex items-center gap-3">
               <span>Show</span>
               <div className="flex h-12 w-14 items-center justify-center bg-white text-[#9F9F9F]">
-                16
+                {itemsPerPage}
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <span>Short by</span>
+              <span>Sort by</span>
               <div className="flex h-12 min-w-[150px] items-center bg-white px-5 text-[#9F9F9F]">
                 Default
               </div>
@@ -65,13 +76,59 @@ export default function FurniroShopPage() {
 
       <main className="mx-auto max-w-7xl px-6 py-14 lg:px-10">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {allProducts.map((product) => (
+          {currentProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+
+        <div className="mt-12 flex flex-wrap justify-center gap-3">
+          <button
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className={`rounded-xl px-6 py-3 transition ${
+              currentPage === 1
+                ? "cursor-not-allowed bg-[#F9F1E7] text-[#9F9F9F]"
+                : "bg-[#F9F1E7] text-black hover:bg-[#b88e2f] hover:text-white"
+            }`}
+          >
+            Prev
+          </button>
+
+          {Array.from({ length: totalPages }, (_, index) => {
+            const pageNumber = index + 1;
+
+            return (
+              <button
+                key={pageNumber}
+                onClick={() => setCurrentPage(pageNumber)}
+                className={`rounded-xl px-6 py-3 transition ${
+                  currentPage === pageNumber
+                    ? "bg-[#b88e2f] text-white"
+                    : "bg-[#F9F1E7] text-black hover:bg-[#b88e2f] hover:text-white"
+                }`}
+              >
+                {pageNumber}
+              </button>
+            );
+          })}
+
+          <button
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+            disabled={currentPage === totalPages}
+            className={`rounded-xl px-6 py-3 transition ${
+              currentPage === totalPages
+                ? "cursor-not-allowed bg-[#F9F1E7] text-[#9F9F9F]"
+                : "bg-[#F9F1E7] text-black hover:bg-[#b88e2f] hover:text-white"
+            }`}
+          >
+            Next
+          </button>
+        </div>
       </main>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 }
