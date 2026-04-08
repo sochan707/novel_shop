@@ -29,7 +29,7 @@ const Header = ({ cartCount = 0 }) => {
         </a>
 
         <nav style={styles.nav}>
-          {["Home", "Shop", "About", "Contact"].map((link) => (
+          {["Home", "Shop", "About", "Contact", "Blog"].map((link) => (
             <a key={link} href={`/${link.toLowerCase()}`} className="navLink">
               {link}
             </a>
