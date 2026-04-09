@@ -9,17 +9,7 @@ import Cart from "./Cart.jsx";
 function App() {
   return (
     <>
-    <Header/>
-    {/* <Homepage/>
-    <Footer/>
-    <ContactPage/>
-    <BlogPage/> */}
-      
-    {/* <Header/> */}
-    {/*<Homepage/>*/}
-    {/* <Footer/> */}
-    {/* <Cart/> */}
-
+    <Homepage/>
     </>
   )
 }

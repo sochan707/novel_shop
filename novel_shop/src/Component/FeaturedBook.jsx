@@ -67,7 +67,7 @@ const FeaturedBooks = () => {
 
                   <button
                   onClick={() => {
-                    addToCart(book);
+                    addToCart(book, "original", Number(book.price.replace("$", "")), 1);
                     setCartOpen(true);
                   }}
                   className="bg-amber-800 hover:bg-amber-900 text-white px-6 py-3 rounded-2xl text-sm">

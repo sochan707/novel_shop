@@ -2,7 +2,7 @@
 
 import React from 'react';
 import fictionImg from '../assets/fiction.jpg';
-import mysteryImg from '../assets/mystery.jpg';
+import mysteryImg from '../assets/Mystery.jpg';
 import romanceImg from '../assets/romance.jpg';
 
 const BrowseRange = () => {

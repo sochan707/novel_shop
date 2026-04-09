@@ -11,6 +11,7 @@ import Homepage from './Homepage.jsx'
 import SingleProduct from './SingleProduct.jsx'
 import { CartProvider } from './Component/CartContext.jsx'
 import Cart from './Cart.jsx'
+import Checkout from "./Checkout.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <App/> },
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   { path: "/blog", element: <BlogPage/> },
   { path: "/contact", element: <ContactPage/> },
   { path: "/cart", element: <Cart /> },
+  { path: "/checkout", element: <Checkout /> },
   { path: "*", element: <NotFoundPage/> },
 ]);
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "./Component/Header";
+import Footer from "./Component/Footer";
 
 const provinces = [
   "Phnom Penh", "Siem Reap", "Battambang", "Kampot", "Kandal"

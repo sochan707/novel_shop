@@ -14,11 +14,6 @@ export default function CartSidebar({
     0
   );
 
-  const handleCheckout = () => {
-    onClose();
-    navigate("/checkout");
-  };
-
   // Lock body scroll when open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
