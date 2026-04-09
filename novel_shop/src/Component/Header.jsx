@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Header({ cartCount = 0 }) {
   const links = ["Home", "Shop", "Contact", "Blog"];
+  const navigate = useNavigate();
 
   return (
     <header className="flex items-center justify-between px-5 py-5 bg-[#6F8F72] border-b border-[#6F8F72]">
@@ -48,6 +51,7 @@ export default function Header({ cartCount = 0 }) {
 
         <div className="relative">
           <button
+            onClick={() => navigate("/checkout")}
             aria-label="Cart"
             className="bg-none border-none cursor-pointer text-[#FFFFF0] transition-colors duration-200 hover:text-[#F2A65A]"
           >
