@@ -3,10 +3,10 @@ import Footer from "./Component/Footer";
 import "./Contact.css";
 
 // Icons from assets
-import iconMail     from "./assets/icons/mail.svg";
-import iconLocation from "./assets/icons/location.svg";
-import iconPhone    from "./assets/icons/phone.svg";
-import iconClock    from "./assets/icons/clock.svg";
+import iconMail     from "./assets/mail.svg";
+import iconLocation from "./assets/location.svg";
+import iconPhone    from "./assets/phone.svg";
+import iconClock    from "./assets/clock.svg";
 
 const contactInfo = [
   {

@@ -4,11 +4,11 @@ import "./Blog.css";
 import { categories, posts, recentPosts } from "./data/blogData";
 
 // Icons from assets
-import iconBook     from "./assets/icons/book.svg";
-import iconPerson   from "./assets/icons/person.svg";
-import iconCalendar from "./assets/icons/calendar.svg";
-import iconTag      from "./assets/icons/tag.svg";
-import iconSearch   from "./assets/icons/search.svg";
+import iconBook     from "./assets/book.svg";
+import iconPerson   from "./assets/person.svg";
+import iconCalendar from "./assets/calendar.svg";
+import iconTag      from "./assets/tag.svg";
+import iconSearch   from "./assets/search.svg";
 
 export default function BlogPage() {
   return (

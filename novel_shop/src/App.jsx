@@ -1,9 +1,8 @@
 
 import Footer from "./Component/Footer"
 import Header from "./Component/Header"
-import Homepage from "./Component/Homepage"
+import Homepage from "./Homepage.jsx"
 import ContactPage from "./Contact"
-import Homepage from "./Homepage"
 import SingleProduct from "./SingleProduct"
 import Cart from "./Cart.jsx";
 
@@ -11,15 +10,15 @@ function App() {
   return (
     <>
     <Header/>
-    <Homepage/>
+    {/* <Homepage/>
     <Footer/>
     <ContactPage/>
-    <BlogPage/>
+    <BlogPage/> */}
       
     {/* <Header/> */}
     {/*<Homepage/>*/}
     {/* <Footer/> */}
-    <Cart/>
+    {/* <Cart/> */}
 
     </>
   )
