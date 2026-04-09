@@ -48,13 +48,6 @@ export default function ComfirmOrder({ form, cartCount, payment, total }) {
             >
               Continue Shopping
             </button>
-
-            <button
-              onClick={() => navigate("/cart")}
-              className="px-5 py-3 rounded-lg bg-[#b88e2f] text-white hover:bg-[#9a7526] transition"
-            >
-              Back to Cart
-            </button>
           </div>
         </div>
       </div>
