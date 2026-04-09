@@ -7,17 +7,27 @@ import NotFoundPage from './NotFoundPage.jsx'
 import Shop from './Shop.jsx'
 import BlogPage from './Blog.jsx'
 import ContactPage from './Contact.jsx'
+import Homepage from './Homepage.jsx'
+import SingleProduct from './SingleProduct.jsx'
+import { CartProvider } from './Component/CartContext.jsx'
+import Cart from './Cart.jsx'
 
 const router = createBrowserRouter([
-  { path: "/",        element: <App /> },
-  { path: "/shop",    element: <Shop /> },
-  { path: "/blog",    element: <BlogPage /> },
-  { path: "/contact", element: <ContactPage /> },
-  { path: "*",        element: <NotFoundPage /> },
+  { path: "/", element: <App/> },
+  { path: "/home", element: <Homepage/> },
+  { path: "/shop", element: <Shop/> },
+  { path: "/product/:id", element: <SingleProduct /> },
+  { path: "/blog", element: <BlogPage/> },
+  { path: "/contact", element: <ContactPage/> },
+  { path: "/checkout", element: <Cart /> },
+  { path: "*", element: <NotFoundPage/> },
 ]);
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </StrictMode>,
 )
