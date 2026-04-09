@@ -37,6 +37,9 @@ export default function ProductCard({ product }) {
         <h3 className="text-lg font-semibold text-[#3A3A3A]">{product.name}</h3>
         <p className="mt-1 text-sm text-[#898989]">{product.subtitle}</p>
         <p className="mt-3 text-xl font-bold text-[#3A3A3A]">{product.price}</p>
+        {product.oldPrice && (
+          <span className="text-sm text-[#B0B0B0] line-through">{product.oldPrice}</span>
+        )}
       </div>
     </div>
   );
