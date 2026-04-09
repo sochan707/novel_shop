@@ -129,10 +129,10 @@ export default function SingleProduct() {
               <p className="text-sm text-[#9f9f9f]">Format</p>
               <div className="mt-3 flex gap-4">
                 <button onClick={() => setFormat("print")} className={`rounded-lg px-4 py-2 text-sm transition ${format === "print" ? "bg-[#b88e2f] text-white" : "bg-[#f9f1e7] text-[#1f1f1f]"}`}>
-                  Print (-10%)
+                  Digital (-10%)
                 </button>
                 <button onClick={() => setFormat("original")} className={`rounded-lg px-4 py-2 text-sm transition ${format === "original" ? "bg-[#b88e2f] text-white" : "bg-[#f9f1e7] text-[#1f1f1f]"}`}>
-                  Original
+                  Physical
                 </button>
               </div>
             </div>
