@@ -1,32 +1,33 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { useCart } from "./CartContext";
 
-export default function Header({ cartCount = 0 }) {
+export default function Header() {
   const links = ["Home", "Shop", "Contact", "Blog"];
   const navigate = useNavigate();
+  const { cartItems } = useCart();
+
+  const cartCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
 
   return (
     <header className="flex items-center justify-between px-5 py-5 bg-[#6F8F72] border-b border-[#6F8F72]">
-      {/* Logo */}
-      <a href="/" className="no-underline">
+      <Link to="/" className="no-underline">
         <span className="text-[20px] font-bold text-[#FFFFF0]">
           NovelShop
         </span>
-      </a>
+      </Link>
 
-      {/* Nav */}
       <nav className="flex gap-5">
         {links.map((link) => (
-          <a
+          <Link
             key={link}
-            href={`/${link.toLowerCase()}`}
+            to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
             className="text-[#FFFFF0] no-underline transition-colors duration-200 hover:text-[#F2A65A] hover:border-b hover:border-[#F2A65A]"
           >
             {link}
-          </a>
+          </Link>
         ))}
       </nav>
 
-      {/* Icons */}
       <div className="flex gap-3">
         <button
           aria-label="Account"
