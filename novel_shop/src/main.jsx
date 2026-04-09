@@ -9,6 +9,8 @@ import BlogPage from './blog.jsx'
 import ContactPage from './Contact.jsx'
 import Homepage from './Homepage.jsx'
 import SingleProduct from './SingleProduct.jsx'
+import { CartProvider } from './Component/CartContext.jsx'
+import Cart from './Cart.jsx'
 
 const router = createBrowserRouter([
   { path: "/", element: <App/> },
@@ -17,13 +19,15 @@ const router = createBrowserRouter([
   { path: "/product/:id", element: <SingleProduct /> },
   { path: "/blog", element: <BlogPage/> },
   { path: "/contact", element: <ContactPage/> },
-  { path: "/blog", element: <BlogPage/> },
+  { path: "/checkout", element: <Cart /> },
   { path: "*", element: <NotFoundPage/> },
-  
 ]);
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
   </StrictMode>,
 )
