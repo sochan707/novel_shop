@@ -29,7 +29,7 @@ const BannerSection = () => {
 
         {/* Local Image */}
         <div 
-          className="h-[520px] rounded-3xl overflow-hidden shadow-2xl bg-cover bg-center"
+          className="h-[390px] rounded-3xl overflow-hidden shadow-2xl bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBanner})` }}
         />
       </div>
