@@ -1,12 +1,15 @@
 import React from "react";
 import { ALL_NOVELS } from "../data/productData"; 
 import { useNavigate } from "react-router-dom";
+import CartSidebar from "./CartSidebar";
+import { useCart } from "./CartContext";
 
 const FeaturedBooks = () => {
 
   const books = ALL_NOVELS.slice(0, 8);
   const navigate = useNavigate();
 
+  const { cartItems, cartOpen, setCartOpen, addToCart, removeFromCart, updateQty } = useCart();
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
@@ -17,6 +20,14 @@ const FeaturedBooks = () => {
             View All Books →
           </button>
         </div>
+
+        <CartSidebar
+          isOpen={cartOpen}
+          onClose={() => setCartOpen(false)}
+          cartItems={cartItems}
+          onRemove={removeFromCart}
+          onUpdateQty={updateQty}
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {books.map((book) => (
@@ -54,7 +65,12 @@ const FeaturedBooks = () => {
                     {book.price} 
                   </span>
 
-                  <button className="bg-amber-800 hover:bg-amber-900 text-white px-6 py-3 rounded-2xl text-sm">
+                  <button
+                  onClick={() => {
+                    addToCart(book);
+                    setCartOpen(true);
+                  }}
+                  className="bg-amber-800 hover:bg-amber-900 text-white px-6 py-3 rounded-2xl text-sm">
                     Add to Cart
                   </button>
                 </div>

@@ -1,18 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
-/**
- * CartSidebar
- *
- * Props:
- *  - isOpen      boolean          — controls visibility
- *  - onClose     () => void       — close handler
- *  - cartItems   CartItem[]       — array of items in the cart
- *  - onRemove    (cartKey) => void
- *  - onUpdateQty (cartKey, newQty) => void
- *
- * CartItem shape:
- *  { cartKey, name, src, format, price, qty }
- */
+
 export default function CartSidebar({
   isOpen,
   onClose,
@@ -201,7 +189,7 @@ export default function CartSidebar({
             </div>
 
             <button
-              onClick={handleCheckout}
+              onClick={()=> navigate("/cart")}
               className="w-full rounded-xl bg-[#b88e2f] py-3 text-sm font-semibold text-white transition hover:bg-[#9a7526] active:scale-[0.98]"
             >
               Proceed to Checkout →

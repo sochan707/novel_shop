@@ -51,7 +51,7 @@ export default function Header({ cartCount = 0 }) {
 
         <div className="relative">
           <button
-            onClick={() => navigate("/checkout")}
+            onClick={() => navigate("/cart")}
             aria-label="Cart"
             className="bg-none border-none cursor-pointer text-[#FFFFF0] transition-colors duration-200 hover:text-[#F2A65A]"
           >
