@@ -1,9 +1,9 @@
 export const categories = [
-  { name: "Fiction", count: 12 },
-  { name: "Mystery", count: 8 },
-  { name: "Romance", count: 7 },
-  { name: "Sci-Fi", count: 5 },
-  { name: "Non-Fiction", count: 6 },
+  { name: "Fiction",      count: 12 },
+  { name: "Mystery",      count: 8  },
+  { name: "Romance",      count: 7  },
+  { name: "Sci-Fi",       count: 5  },
+  { name: "Non-Fiction",  count: 6  },
 ];
 
 export const posts = [

@@ -3,16 +3,23 @@ import Footer from "./Component/Footer";
 import "./Blog.css";
 import { categories, posts, recentPosts } from "./data/blogData";
 
+// Icons from assets
+import iconBook     from "./assets/icons/book.svg";
+import iconPerson   from "./assets/icons/person.svg";
+import iconCalendar from "./assets/icons/calendar.svg";
+import iconTag      from "./assets/icons/tag.svg";
+import iconSearch   from "./assets/icons/search.svg";
+
 export default function BlogPage() {
   return (
     <div className="blog-page">
       <Header />
 
-      {/* Hero Banner */}
+      {/* ── Hero Banner ── */}
       <section className="blog-hero">
         <div className="blog-hero-overlay" />
         <div className="blog-hero-content">
-          <div className="blog-hero-icon">📖</div>
+          <img src={iconBook} alt="" className="blog-hero-icon" />
           <h1 className="blog-hero-title">Blog</h1>
           <p className="blog-hero-breadcrumb">
             <span className="blog-hero-home">Home</span>
@@ -22,7 +29,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Main Content */}
+      {/* ── Main Content ── */}
       <main className="blog-main">
         <div className="blog-layout">
 
@@ -35,11 +42,22 @@ export default function BlogPage() {
                   alt={post.title}
                   className="blog-article-img"
                 />
+
                 <div className="blog-article-meta">
-                  <span>👤 Admin</span>
-                  <span>📅 {post.date}</span>
-                  <span>🏷 {post.category}</span>
+                  <span className="blog-meta-item">
+                    <img src={iconPerson}   alt="" className="blog-meta-icon" />
+                    Admin
+                  </span>
+                  <span className="blog-meta-item">
+                    <img src={iconCalendar} alt="" className="blog-meta-icon" />
+                    {post.date}
+                  </span>
+                  <span className="blog-meta-item">
+                    <img src={iconTag}      alt="" className="blog-meta-icon" />
+                    {post.category}
+                  </span>
                 </div>
+
                 <h2 className="blog-article-title">{post.title}</h2>
                 <p className="blog-article-excerpt">{post.excerpt}</p>
                 <button className="blog-read-more">Read more</button>
@@ -55,8 +73,9 @@ export default function BlogPage() {
             </div>
           </section>
 
-          {/* Sidebar */}
+          {/* ── Sidebar ── */}
           <aside className="blog-sidebar">
+
             {/* Search */}
             <div className="blog-search-wrap">
               <input
@@ -64,7 +83,7 @@ export default function BlogPage() {
                 placeholder="Search posts..."
                 className="blog-search-input"
               />
-              <span className="blog-search-icon">🔍</span>
+              <img src={iconSearch} alt="Search" className="blog-search-icon" />
             </div>
 
             {/* Categories */}
@@ -93,12 +112,16 @@ export default function BlogPage() {
                     />
                     <div className="blog-recent-info">
                       <p className="blog-recent-title">{post.title}</p>
-                      <p className="blog-recent-date">📅 {post.date}</p>
+                      <p className="blog-recent-date">
+                        <img src={iconCalendar} alt="" className="blog-meta-icon" />
+                        {post.date}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
+
           </aside>
         </div>
       </main>
@@ -114,7 +137,7 @@ function PageBtn({ children, active = false, wide = false }) {
       className={[
         "blog-page-btn",
         active ? "blog-page-btn--active" : "",
-        wide ? "blog-page-btn--wide" : "",
+        wide   ? "blog-page-btn--wide"   : "",
       ]
         .filter(Boolean)
         .join(" ")}

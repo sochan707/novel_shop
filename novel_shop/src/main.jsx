@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import NotFoundPage from './NotFoundPage.jsx'
 import Shop from './Shop.jsx'
-import BlogPage from './blog.jsx'
+import BlogPage from './Blog.jsx'
 import ContactPage from './Contact.jsx'
 import Homepage from './Homepage.jsx'
 import SingleProduct from './SingleProduct.jsx'
